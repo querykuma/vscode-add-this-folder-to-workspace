@@ -1,6 +1,6 @@
 {
 	"name": "add-this-folder-to-workspace",
-	"displayName": "Add this folder to workspace",
+	"displayName": "Add This Folder To Workspace",
 	"description": "A simple extension to add the folder in the active file to the workspace",
 	"version": "0.0.1",
 	"engines": {
