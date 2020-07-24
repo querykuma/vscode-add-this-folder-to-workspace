@@ -1,3 +1,7 @@
+## [1.0.2] - 2020-07-25
+
+- New: add a confirmation setting to fire "Close Others"
+
 ## [1.0.1] - 2020-07-25
 
 - Fix: top folder did not work correctly. add error check.

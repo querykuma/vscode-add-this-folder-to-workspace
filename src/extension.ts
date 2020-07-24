@@ -48,12 +48,18 @@ export function activate(context: vscode.ExtensionContext) {
 			if (vscode.workspace.workspaceFolders!.length === 1
 				&& is_folder_equal(vscode.workspace.workspaceFolders![0].uri.path, folder)) { return; }
 
-			let options: vscode.InputBoxOptions = {
-				prompt: "Add This Folder to Workspace & Remove Others from Workspace. OK?",
-				value: "YES"
-			};
-			const answer = await vscode.window.showInputBox(options);
-			if (!answer) { return; }
+			var confirm = vscode.workspace.getConfiguration("addThisFolderToWorkspace").confirm.CloseOthers;
+
+			if (confirm) {
+
+				let options: vscode.InputBoxOptions = {
+					prompt: "Add This Folder to Workspace & Remove Others from Workspace. OK?",
+					value: "YES"
+				};
+				const answer = await vscode.window.showInputBox(options);
+				if (!answer) { return; }
+
+			}
 
 		}
 

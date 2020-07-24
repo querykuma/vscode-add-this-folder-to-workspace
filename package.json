@@ -2,7 +2,7 @@
 	"name": "add-this-folder-to-workspace",
 	"displayName": "Add This Folder To Workspace",
 	"description": "A simple extension to add the folder in the active file to the workspace",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -31,13 +31,23 @@
 			"editor/title/context": [
 				{
 					"command": "add-this-folder-to-workspace.run",
-					"group": "navigation"
+					"group": "navigation@1"
 				},
 				{
 					"command": "add-this-folder-to-workspace.close-others",
-					"group": "navigation"
+					"group": "navigation@2"
 				}
 			]
+		},
+		"configuration": {
+			"title": "Add This Folder to Workspace",
+			"properties": {
+				"addThisFolderToWorkspace.confirm.CloseOthers": {
+					"type": "boolean",
+					"default": true,
+					"description": "Controls whether to ask for confirmation when removing other folders from workspace"
+				}
+			}
 		}
 	},
 	"scripts": {
