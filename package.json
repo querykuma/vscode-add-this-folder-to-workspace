@@ -2,7 +2,7 @@
 	"name": "add-this-folder-to-workspace",
 	"displayName": "Add This Folder To Workspace",
 	"description": "A simple extension to add the folder in the active file to the workspace",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -11,7 +11,9 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:add-this-folder-to-workspace.run"
+		"onCommand:add-this-folder-to-workspace.run",
+		"onCommand:add-this-folder-to-workspace.close-others",
+		"onStartupFinished"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -19,12 +21,20 @@
 			{
 				"command": "add-this-folder-to-workspace.run",
 				"title": "Add This Folder to Workspace"
+			},
+			{
+				"command": "add-this-folder-to-workspace.close-others",
+				"title": "Add This Folder to Workspace & Close Others"
 			}
 		],
 		"menus": {
 			"editor/title/context": [
 				{
 					"command": "add-this-folder-to-workspace.run",
+					"group": "navigation"
+				},
+				{
+					"command": "add-this-folder-to-workspace.close-others",
 					"group": "navigation"
 				}
 			]
@@ -66,7 +76,8 @@
 		"url": "https://github.com/querykuma/vscode-add-this-folder-to-workspace/issues"
 	},
 	"keywords": [
-		"workspace"
+		"workspace",
+		"folder"
 	],
 	"license": "MIT"
 }
