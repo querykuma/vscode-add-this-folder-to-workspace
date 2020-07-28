@@ -2,7 +2,7 @@
 	"name": "add-this-folder-to-workspace",
 	"displayName": "Add This Folder To Workspace",
 	"description": "A simple extension to add the folder in the active file to the workspace",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -13,6 +13,8 @@
 	"activationEvents": [
 		"onCommand:add-this-folder-to-workspace.run",
 		"onCommand:add-this-folder-to-workspace.close-others",
+		"onCommand:add-this-folder-to-workspace.run.pick-folders",
+		"onCommand:add-this-folder-to-workspace.close-others.pick-folders",
 		"onStartupFinished"
 	],
 	"main": "./dist/extension.js",
@@ -25,27 +27,67 @@
 			{
 				"command": "add-this-folder-to-workspace.close-others",
 				"title": "Add This Folder to Workspace & Close Others"
+			},
+			{
+				"command": "add-this-folder-to-workspace.run.pick-folders",
+				"title": "Add This Folder to Workspace with Pick"
+			},
+			{
+				"command": "add-this-folder-to-workspace.close-others.pick-folders",
+				"title": "Add This Folder to Workspace & Close Others with Pick"
 			}
 		],
 		"menus": {
 			"editor/title/context": [
 				{
 					"command": "add-this-folder-to-workspace.run",
-					"group": "navigation@1"
+					"group": "navigation@1",
+					"when": "resourceScheme == file && config.addThisFolderToWorkspace.showAddThisFolderToWorkspaceInContextMenu"
+				},
+				{
+					"command": "add-this-folder-to-workspace.run.pick-folders",
+					"group": "navigation@2",
+					"when": "resourceScheme == file && config.addThisFolderToWorkspace.showAddThisFolderToWorkspaceWithPickInContextMenu"
 				},
 				{
 					"command": "add-this-folder-to-workspace.close-others",
-					"group": "navigation@2"
+					"group": "navigation@3",
+					"when": "resourceScheme == file && config.addThisFolderToWorkspace.showAddThisFolderToWorkspaceCloseOthersInContextMenu"
+				},
+				{
+					"command": "add-this-folder-to-workspace.close-others.pick-folders",
+					"group": "navigation@4",
+					"when": "resourceScheme == file && config.addThisFolderToWorkspace.showAddThisFolderToWorkspaceCloseOthersWithPickInContextMenu"
 				}
 			]
 		},
 		"configuration": {
 			"title": "Add This Folder to Workspace",
 			"properties": {
-				"addThisFolderToWorkspace.confirm.CloseOthers": {
+				"addThisFolderToWorkspace.confirmCloseOthers": {
 					"type": "boolean",
 					"default": true,
-					"description": "Controls whether to ask for confirmation when removing other folders from workspace"
+					"description": "Controls whether to ask for confirmation in the 'Add This Folder to Workspace & Close Others'"
+				},
+				"addThisFolderToWorkspace.showAddThisFolderToWorkspaceInContextMenu": {
+					"type": "boolean",
+					"default": true,
+					"description": "Controls whether 'Add This Folder to Workspace' is displayed on the context menu"
+				},
+				"addThisFolderToWorkspace.showAddThisFolderToWorkspaceCloseOthersInContextMenu": {
+					"type": "boolean",
+					"default": true,
+					"description": "Controls whether 'Add This Folder to Workspace & Close Others' is displayed on the context menu"
+				},
+				"addThisFolderToWorkspace.showAddThisFolderToWorkspaceWithPickInContextMenu": {
+					"type": "boolean",
+					"default": false,
+					"description": "Controls whether 'Add This Folder to Workspace with Pick' is displayed on the context menu"
+				},
+				"addThisFolderToWorkspace.showAddThisFolderToWorkspaceCloseOthersWithPickInContextMenu": {
+					"type": "boolean",
+					"default": false,
+					"description": "Controls whether 'Add This Folder to Workspace & Close Others with Pick' is displayed on the context menu"
 				}
 			}
 		}
