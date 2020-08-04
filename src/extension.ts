@@ -18,11 +18,11 @@ const is_folder_equal = (folder1: string, folder2: string): boolean => {
 };
 
 const get_folders = (folder: string): string[] => {
-	var folders = [];
-	var rest = folder;
+	let folders = [];
+	let rest = folder;
 	while (true) {
 
-		var m = rest.match(/^((.*)\/[^/]+\/?)$/u);
+		let m = rest.match(/^((.*)\/[^/]+\/?)$/u);
 		if (m) {
 
 			folders.push(m[1]);
@@ -45,7 +45,7 @@ const pick_folder = (folder: string): Promise<string> => new Promise(resolve => 
 
 	const folders = get_folders(folder);
 
-	var quick_pick = window.createQuickPick();
+	let quick_pick = window.createQuickPick();
 	const items: QuickPickItem[] = folders.map(a => ({
 		label: a
 	}));
@@ -113,7 +113,7 @@ const close_others = async (pick_folders: boolean) => {
 
 		if (!pick_folders) {
 
-			var confirm = workspace.getConfiguration("addThisFolderToWorkspace").confirmCloseOthers;
+			let confirm = workspace.getConfiguration("addThisFolderToWorkspace").confirmCloseOthers;
 
 			if (confirm) {
 
@@ -131,7 +131,7 @@ const close_others = async (pick_folders: boolean) => {
 	}
 
 	// console.log(workspace.workspaceFolders?.map(a => a.uri.path));
-	var ret = workspace.updateWorkspaceFolders(
+	let ret = workspace.updateWorkspaceFolders(
 		0,
 		workspace.workspaceFolders ? workspace.workspaceFolders.length : 0,
 		{ uri: folder_uri });

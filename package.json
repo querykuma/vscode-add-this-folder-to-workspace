@@ -2,7 +2,7 @@
 	"name": "add-this-folder-to-workspace",
 	"displayName": "Add This Folder To Workspace",
 	"description": "A simple extension to add the folder in the active file to the workspace",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"engines": {
 		"vscode": "^1.47.0"
 	},

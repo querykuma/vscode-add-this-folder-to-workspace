@@ -2,7 +2,7 @@
 
 ## Features
 
-The extension adds 4 commands. They adds the folder in the active file to the workspace.
+The extension adds 4 commands. They add the folder in the active file to the workspace.
 
 It's better than "Add Folder" not to show the folder dialog.
 
@@ -12,7 +12,7 @@ The settings let the user control whether to show each command in the context me
 
 ### Add This Folder to Workspace
 
-Right click the title menu and select "Add This Folder to Workspace".
+Right-click the title menu and select "Add This Folder to Workspace".
 
 It adds the folder in the active file to the workspace by one click.
 
@@ -22,15 +22,15 @@ It adds the folder in the active file to the workspace by one click.
 
 Run the command "Add This Folder to Workspace with Pick".
 
-The user can pick a folder from upper folders in the active file and adds the folder to the workspace.
+The user can pick a folder from the upper folders in the active file and adds the folder to the workspace.
 
 ![operation2](https://raw.githubusercontent.com/querykuma/vscode-add-this-folder-to-workspace/master/images/operation2.gif)
 
 ### Add This Folder to Workspace & Close Others
 
-Right click the title menu and select "Add This Folder to Workspace & Close Others".
+Right-click the title menu and select "Add This Folder to Workspace & Close Others".
 
-It adds the folder in the active file to the workspace and remove other folders from the workspace.
+It adds the folder in the active file to the workspace and removes other folders from the workspace.
 
 It is a bit better than "Close Workspace" and "Add This Folder to Workspace".
 
@@ -38,7 +38,7 @@ It is a bit better than "Close Workspace" and "Add This Folder to Workspace".
 
 Run the command "Add This Folder to Workspace & Close Others with Pick".
 
-The user can pick a folder from upper folders in the active file and adds the folder to the workspace.
+The user can pick a folder from the upper folders in the active file, adds the folder to the workspace and removes other folders from the workspace.
 
 It is a bit better than "Close Workspace" and "Add This Folder to Workspace with Pick".
 
